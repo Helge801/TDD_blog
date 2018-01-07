@@ -1,1 +1,7 @@
-<h1>Blogs</h1>
+<h1>Index Page for Blogs</h1>
+
+<% @blogs.each do |b| %>
+  <h2><%= link_to b.title, b, id: "#{b.id}_show_link"%></h2>
+  <p><%= b.description %></p>
+  <hr>
+<% end %>
