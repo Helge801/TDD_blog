@@ -1,3 +1,5 @@
+# ==================== Seed Methods ==================== #
+
 def em string
   puts "*" * 100
   puts "   " + string
@@ -24,6 +26,10 @@ def get_long_content quotes
   content
 end
 
+# ==================== Seed Methods End ==================== #
+
+# ==================== Blog Creation ==================== #
+
 em "creating Blogs"
 @count = 0
 20.times do |i|
@@ -34,4 +40,23 @@ em "creating Blogs"
   @count += 1
   puts "#{blog.id}: #{blog.title}"
 end
-em "#{@count} blogs created"
+em "#{@count} Blogs created"
+
+# ==================== Blog Creation End ==================== #
+
+# ==================== Post Creation ==================== #
+
+em "Creating Posts for Blogs"
+@count = 0
+@blog_count = Blog.count
+(@blog_count * 5).times do
+  blog_number = [*1..@blog_count].sample
+  Post.create!(body: get_long_content([*15..30].sample),
+               blog_id: blog_number
+               )
+  @count += 1
+  puts "#{@count}: Post created for Blog #{blog_number}"
+end
+em "#{@count} Posts created"
+
+# ==================== Post Creation End ==================== #
