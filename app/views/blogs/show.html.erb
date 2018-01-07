@@ -1,3 +1,8 @@
-<h1><%= @blog.title %></h1>
-<p><%= @blog.description %></p>
-<%= image_tag @blog.image, alt: "backdrop Picture" %>
+<div>
+  <h1><%= @blog.title %></h1>
+  <p><%= @blog.description %></p>
+  <%= image_tag @blog.image, alt: "backdrop Picture" %>
+</div>
+<div>
+  <%= render @posts  %>
+</div>

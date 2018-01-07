@@ -9,6 +9,7 @@ class BlogsController < ApplicationController
   end
 
   def show
+    @posts = @blog.post.all
   end
 
   private
