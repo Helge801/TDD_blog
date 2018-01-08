@@ -1,0 +1,12 @@
+<%= form_for @blog do |form| %>
+
+<%= form.text_field :title, placeholder: "title" %>
+
+<%= form.text_area :description, placeholder: "description" %>
+
+<%= form.text_field :image, placeholder: "image" %>
+
+<%= form.submit 'Save' %>
+
+
+<% end %>
